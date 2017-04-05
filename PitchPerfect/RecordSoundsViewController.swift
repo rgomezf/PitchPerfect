@@ -25,17 +25,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear")
     }
     
     @IBAction func recordAudio(_ sender: AnyObject) {
         
-        recordingLabel.text = "Recording in progress"
-        stopRecordingButton.isEnabled = true
-        recordButton.isEnabled = false
+        configureUI(isRecording: true)
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
@@ -52,9 +48,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     @IBAction func stopRecording(_ sender: AnyObject) {
         
-        stopRecordingButton.isEnabled = false
-        recordButton.isEnabled = true
-        recordingLabel.text = "Tap to Record"
+        configureUI(isRecording: false)
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
@@ -63,9 +57,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         
         if flag {
-            self.performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+            performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
         } else {
-            print("Saving of recording failed")
+            showAlert(Alerts.AudioRecordingError, message: Alerts.RecordingFailedMessage)
         }
     }
     
@@ -78,4 +72,25 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
 }
-
+extension RecordSoundsViewController {
+    
+    struct Alerts {
+        static let DismissAlert = "Dismiss"
+        static let RecordingFailedTitle = "Recording Failed"
+        static let RecordingFailedMessage = "Something went wrong with your recording."
+        static let AudioRecorderError = "Audio Recorder Error"
+        static let AudioRecordingError = "Audio Recording Error"
+    }
+    
+    func showAlert(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Alerts.DismissAlert, style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func configureUI( isRecording: Bool) {
+        recordingLabel.text = isRecording ? "Recording in progress" : "Tap to Record"
+        stopRecordingButton.isEnabled = isRecording
+        recordButton.isEnabled = !isRecording
+    }
+}
