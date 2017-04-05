@@ -4,10 +4,16 @@
 //
 //  Copyright © 2016 Udacity. All rights reserved.
 //
+
 import UIKit
 import AVFoundation
 
+// MARK: - PlaySoundsViewController: AVAudioPlayerDelegate
+
 extension PlaySoundsViewController: AVAudioPlayerDelegate {
+
+    // MARK: Alerts 
+    
     struct Alerts {
         static let DismissAlert = "Dismiss"
         static let RecordingDisabledTitle = "Recording Disabled"
@@ -21,7 +27,8 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         static let AudioEngineError = "Audio Engine Error"
     }
     
-    // raw values correspond to sender tags
+    // MARK: PlayingState
+    
     enum PlayingState { case playing, notPlaying }
 
     
@@ -34,7 +41,6 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         } catch {
             showAlert(Alerts.AudioFileError, message: String(describing: error))
         }
-        print("Audio has been setup")
     }
     
     func playSound(rate: Float? = nil, pitch: Float? = nil, echo: Bool = false, reverb: Bool = false) {
@@ -109,15 +115,6 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         audioPlayerNode.play()
     }
     
-    
-    // MARK: Connect List of Audio Nodes
-    
-    func connectAudioNodes(_ nodes: AVAudioNode...) {
-        for x in 0..<nodes.count-1 {
-            audioEngine.connect(nodes[x], to: nodes[x+1], format: audioFile.processingFormat)
-        }
-    }
-    
     func stopAudio() {
         
         if let stopTimer = stopTimer {
@@ -133,6 +130,15 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         if let audioEngine = audioEngine {
             audioEngine.stop()
             audioEngine.reset()
+        }
+    }
+    
+    
+    // MARK: Connect List of Audio Nodes
+    
+    func connectAudioNodes(_ nodes: AVAudioNode...) {
+        for x in 0..<nodes.count-1 {
+            audioEngine.connect(nodes[x], to: nodes[x+1], format: audioFile.processingFormat)
         }
     }
     
@@ -158,7 +164,6 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         echoButton.isEnabled = enabled
         reverbButton.isEnabled = enabled
     }
-
     
     func showAlert(_ title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

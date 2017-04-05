@@ -78,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E4D61461E952FA50071AD19 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E9D269F1D0F4E3900D87674 /* AppDelegate.swift */,
+				3E9D26A61D0F4E3900D87674 /* Assets.xcassets */,
+				3E9D26A81D0F4E3900D87674 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		3E9D26931D0F4E3900D87674 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +111,12 @@
 		3E9D269E1D0F4E3900D87674 /* PitchPerfect */ = {
 			isa = PBXGroup;
 			children = (
-				3E9D269F1D0F4E3900D87674 /* AppDelegate.swift */,
 				3E9D26A11D0F4E3900D87674 /* RecordSoundsViewController.swift */,
-				3E9D26A31D0F4E3900D87674 /* Main.storyboard */,
 				3E9D26D11D109B9800D87674 /* PlaySoundsViewController.swift */,
 				3E976BEE1D11917A00E3EA21 /* PlaySoundsViewController+Audio.swift */,
-				3E9D26A61D0F4E3900D87674 /* Assets.xcassets */,
-				3E9D26A81D0F4E3900D87674 /* LaunchScreen.storyboard */,
+				3E9D26A31D0F4E3900D87674 /* Main.storyboard */,
 				3E9D26AB1D0F4E3900D87674 /* Info.plist */,
+				3E4D61461E952FA50071AD19 /* Supporting Files */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
