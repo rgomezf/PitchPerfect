@@ -13,8 +13,6 @@
 		3E9D26A51D0F4E3900D87674 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9D26A31D0F4E3900D87674 /* Main.storyboard */; };
 		3E9D26A71D0F4E3900D87674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E9D26A61D0F4E3900D87674 /* Assets.xcassets */; };
 		3E9D26AA1D0F4E3900D87674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9D26A81D0F4E3900D87674 /* LaunchScreen.storyboard */; };
-		3E9D26B51D0F4E3900D87674 /* PitchPerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9D26B41D0F4E3900D87674 /* PitchPerfectTests.swift */; };
-		3E9D26C01D0F4E3900D87674 /* PitchPerfectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9D26BF1D0F4E3900D87674 /* PitchPerfectUITests.swift */; };
 		3E9D26D21D109B9800D87674 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9D26D11D109B9800D87674 /* PlaySoundsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,11 +43,7 @@
 		3E9D26A91D0F4E3900D87674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E9D26AB1D0F4E3900D87674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E9D26B01D0F4E3900D87674 /* PitchPerfectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitchPerfectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E9D26B41D0F4E3900D87674 /* PitchPerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchPerfectTests.swift; sourceTree = "<group>"; };
-		3E9D26B61D0F4E3900D87674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E9D26BB1D0F4E3900D87674 /* PitchPerfectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitchPerfectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E9D26BF1D0F4E3900D87674 /* PitchPerfectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchPerfectUITests.swift; sourceTree = "<group>"; };
-		3E9D26C11D0F4E3900D87674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E9D26D11D109B9800D87674 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,8 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				3E9D269E1D0F4E3900D87674 /* PitchPerfect */,
-				3E9D26B31D0F4E3900D87674 /* PitchPerfectTests */,
-				3E9D26BE1D0F4E3900D87674 /* PitchPerfectUITests */,
 				3E9D269D1D0F4E3900D87674 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,24 +111,6 @@
 				3E4D61461E952FA50071AD19 /* Supporting Files */,
 			);
 			path = PitchPerfect;
-			sourceTree = "<group>";
-		};
-		3E9D26B31D0F4E3900D87674 /* PitchPerfectTests */ = {
-			isa = PBXGroup;
-			children = (
-				3E9D26B41D0F4E3900D87674 /* PitchPerfectTests.swift */,
-				3E9D26B61D0F4E3900D87674 /* Info.plist */,
-			);
-			path = PitchPerfectTests;
-			sourceTree = "<group>";
-		};
-		3E9D26BE1D0F4E3900D87674 /* PitchPerfectUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3E9D26BF1D0F4E3900D87674 /* PitchPerfectUITests.swift */,
-				3E9D26C11D0F4E3900D87674 /* Info.plist */,
-			);
-			path = PitchPerfectUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +258,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E9D26B51D0F4E3900D87674 /* PitchPerfectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E9D26C01D0F4E3900D87674 /* PitchPerfectUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
